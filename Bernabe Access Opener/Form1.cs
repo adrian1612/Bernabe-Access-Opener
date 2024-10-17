@@ -35,7 +35,7 @@ namespace Bernabe_Access_Opener
         {
             treeView1.Nodes.Clear();
             treeView1.Nodes.Add("top", "Double Click to Run the Application");
-            Directory.GetFiles("_System/").ToList().ForEach(r =>
+            Directory.GetFiles(@"\\192.168.0.102\Temp").ToList().ForEach(r =>
             {
                 FileInfo info = new FileInfo(r);
                 treeView1.Nodes["top"].Nodes.Add(info.Name.Replace(info.Extension, "")).Tag = info.FullName;
@@ -55,7 +55,8 @@ namespace Bernabe_Access_Opener
         {
             if (e.KeyCode == Keys.O && e.Control)
             {
-                Process.Start("_System");
+                //Process.Start("_System");
+                MessageBox.Show("DON'T DO THIS!", "HACKER ALERT", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Stop);
             }
             if (e.Control && e.KeyCode == Keys.R)
             {
